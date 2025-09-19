@@ -16,6 +16,9 @@ jobs:
       id-token: write
       actions: read
     steps:
+      - name: Set env
+        run: echo "ANTHROPIC_BASE_URL=$(echo ${{ secrets.ANTHROPIC_BASE_URL }})" >> $GITHUB_ENV
+
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
