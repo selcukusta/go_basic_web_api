@@ -32,8 +32,8 @@ jobs:
           label_trigger: "assigned-to-ai-developer"
           claude_args: |
             --max-turns 3
-
-      - name: Push branch if Claude made commits
-        if: always() && steps.claude.outcome == 'success'
-        run: |
-          git push -u origin HEAD || echo "Push failed (may already be pushed)"
+          custom_instructions: |
+            Use branch prefix: claude-agent-
+            If the branch already exists, continue working on it, that means you already worked on this issue, and now continue working on it and making changes and fixes.
+            Push your changes to the branch and verify that the branch is found before done
+            I need you to check if the branch is live - no need for PR, make sure the branch you made and committed all the changes to is there
