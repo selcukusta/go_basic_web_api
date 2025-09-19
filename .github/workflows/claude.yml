@@ -32,7 +32,7 @@ jobs:
           label_trigger: "assigned-to-ai-developer"
           claude_args: |
             --max-turns 3
-          custom_instructions: |
+          prompt: |
             Use branch prefix: claude-agent-
             If the branch already exists, continue working on it, that means you already worked on this issue, and now continue working on it and making changes and fixes.
             Push your changes to the branch and verify that the branch is found before done
