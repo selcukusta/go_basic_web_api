@@ -29,5 +29,6 @@ jobs:
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          label_trigger: "assigned-to-ai-developer"
           claude_args: |
             --max-turns 3
