@@ -1,0 +1,31 @@
+name: Claude Code
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  ai-developer:
+    if: |
+      (github.event_name == 'issues' &&  contains(github.event.issue.labels.*.name, 'assigned-to-ai-developer'))
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+      actions: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Run Claude Code
+        id: claude
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          anthropic_base_url: ${{ secrets.ANTHROPIC_BASE_URL }}
+          claude_args: |
+            --max-turns 3
