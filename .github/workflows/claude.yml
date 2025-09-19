@@ -32,3 +32,4 @@ jobs:
           label_trigger: "assigned-to-ai-developer"
           claude_args: |
             --max-turns 3
+            --allowed-tools 'Edit,MultiEdit,Write,Read,Glob,Grep,LS,Bash(git:*),Bash(go:*),Bash(gh:*)'
