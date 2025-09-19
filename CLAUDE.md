@@ -157,8 +157,3 @@ When multiple valid approaches exist, choose based on:
 - Commit working code incrementally
 - Update plan documentation as you go
 - Learn from existing implementations
-- Stop after 3 failed attempts and reassess
-- Use branch prefix: claude-agent-
-- If the branch already exists, continue working on it, that means you already worked on this issue, and now continue working on it and making changes and fixes.
-- Push your changes to the branch and verify that the branch is found before done
-- I need you to check if the branch is live - no need for PR, make sure the branch you made and committed all the changes to is there
